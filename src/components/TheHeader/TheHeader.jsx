@@ -1,30 +1,31 @@
-import { useEffect } from "react";
+import { Link, NavLink } from "react-router";
+import { Container, Nav } from "react-bootstrap";
+
 import "./TheHeader.css";
 
-function TheHeader({ headerLinks }) {
-  console.log("Hello From TheHeader Child Component Before useEffect");
-  useEffect(() => {
-    console.log("Hello From TheHeader Child Component From useEffect 1");
-    // This function will be fired after component unmount or deleted mean removed from DOM
-    return () =>
-      console.log(
-        "Hello From TheHeader Child Component From useEffect 1 After UnMountttttttttttttttttttttt"
-      );
-  }, []);
+const navLinks = [
+  { path: "/", name: "Home" },
+  { path: "/cart", name: "Cart" },
+  { path: "/product-details", name: "Product Details" },
+  { path: "/category", name: "Category" },
+  { path: "/login", name: "Login" },
+  { path: "/register", name: "Register" },
+];
 
-  console.log("Hello From TheHeader Child Component After useEffect");
-
+function TheHeader() {
   return (
     <header>
-      <nav>
-        <ul>
-          {headerLinks.map(({ title, path }) => (
-            <li key={path}>
-              <a href={path}>{title}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <Container>
+        <Nav>
+          <ul className="nav-list">
+            {navLinks.map(({ path, name }) => (
+              <li key={path} className="nav-item">
+                <NavLink to={path}>{name}</NavLink>
+              </li>
+            ))}
+          </ul>
+        </Nav>
+      </Container>
     </header>
   );
 }
