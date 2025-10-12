@@ -1,0 +1,19 @@
+.nav-item a {
+  color: hsl(var(--black));
+}
+
+.nav-item a.active {
+  color: hsl(var(--blue));
+}
+
+.header {
+  color: red;
+}
+
+/* To edit global classes */
+.header :global(.nav) {}
+
+.nav-link {
+  composes: header
+    /* composes: header from "../TheFooter/TheFooter.module.css" */
+}

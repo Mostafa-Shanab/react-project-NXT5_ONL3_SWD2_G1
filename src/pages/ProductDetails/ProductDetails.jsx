@@ -7,6 +7,7 @@ import useFetching from "../../hooks/useFetching";
 const URL = "https://fakestoreapi.com/products/";
 
 function ProductDetails() {
+  console.log("ProductDetails Component");
   const { handleFecthData, isLoading, isError, data } = useFetching(URL);
 
   // useEffect(() => {
