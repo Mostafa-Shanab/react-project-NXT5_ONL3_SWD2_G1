@@ -21,7 +21,7 @@ function Login() {
     setUserData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {aa
     console.log("Redirect to product-details after 2s");
     e.preventDefault();
     // sending data
